@@ -33,7 +33,7 @@
     id = turnstile.render(widget, {
       sitekey: box.dataset.sitekey,
       language: box.dataset.lang,
-      theme: "dark",
+      theme: box.dataset.theme,
       callback: reveal,
       "error-callback": function () { status.textContent = box.dataset.failed; }
     });

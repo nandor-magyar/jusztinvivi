@@ -12,6 +12,7 @@ disableKinds = ["taxonomy", "term"]
   instagram = ""            # handle still missing; empty shows a pencil note
   turnstileSiteKey = "1x00000000000000000000AA"   # Cloudflare test key (always passes); replace with the real one. the address comes from CONTACT_EMAIL on the server
   featured = "olivia"       # work shown big on the home page
+  scheme = "light"          # light (white, embossed relief from tools/relief.py) or dark
 
 [languages]
   [languages.hu]

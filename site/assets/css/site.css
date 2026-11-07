@@ -44,6 +44,21 @@
   --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
   color-scheme: dark;
 }
+:root[data-scheme="light"] {
+  --paper: #f7f5f9;
+  --ink: #1e1a24;
+  --soft: #4b4456;
+  --muted: #6c6477;
+  --rule: #dcd6e2;
+  --pencil: #7048a8;
+  color-scheme: light;
+}
+:root[data-scheme="light"] body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--paper) url("/img/relief.webp") center / cover no-repeat; }
+@media (max-aspect-ratio: 4/5) {
+  :root[data-scheme="light"] body::before { background-image: url("/img/relief-tall.webp"); }
+}
+:root[data-scheme="light"] :is(.hero, .art, .journey, .tile .frame) img { box-shadow: 0 1px 2px rgb(40 30 50 / .08), 0 10px 28px rgb(40 30 50 / .12); }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
