@@ -6,9 +6,9 @@
   {{- range $p.Translations }}{{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}{{ end -}}
   {{- if $i }}<span aria-hidden="true">/</span>{{ end -}}
   {{- if eq $lang $p.Language.Lang -}}
-  <span aria-current="true" lang="{{ $lang }}">{{ $h.Language.LanguageName }}</span>
+  <span aria-current="true" lang="{{ $lang }}"><img src="/img/flags/{{ $lang }}.svg" alt="" width="20" height="10">{{ $h.Language.LanguageName }}</span>
   {{- else -}}
-  <a href="{{ $target }}" hreflang="{{ $lang }}" lang="{{ $lang }}">{{ $h.Language.LanguageName }}</a>
+  <a href="{{ $target }}" hreflang="{{ $lang }}" lang="{{ $lang }}"><img src="/img/flags/{{ $lang }}.svg" alt="" width="20" height="10">{{ $h.Language.LanguageName }}</a>
   {{- end -}}
 {{- end -}}
 </div>

@@ -147,7 +147,7 @@ v += 0.003 * blur(rng.standard_normal((H, W)).astype(np.float32), 0.7) / 0.4
 v += 0.006 * blur(rng.standard_normal((H, W)).astype(np.float32), 60 * U) / 0.0047
 v -= 0.035 * np.clip(r - 0.2, 0, None) ** 2
 
-base = np.array([247, 245, 249], np.float32)
+base = np.array([248, 245, 239], np.float32)
 rgb = np.clip(base[None, None, :] * v[..., None], 0, 255).astype(np.uint8)
 Image.fromarray(rgb).save(OUT, "WEBP", quality=82, method=6)
 print(OUT, W, H)

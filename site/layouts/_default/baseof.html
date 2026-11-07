@@ -23,7 +23,10 @@
 <body>
 <div class="wrap">
   <header class="side">
-    <a href="{{ site.Home.RelPermalink }}" class="name">{{ site.Params.name }}<small>{{ site.Params.bio }}</small></a>
+    <div class="brand">
+      <a href="{{ site.Home.RelPermalink }}" class="name">{{ site.Params.name }}<small>{{ site.Params.bio }}</small></a>
+      {{ partial "lang.html" . }}
+    </div>
     {{- $cur := . }}
     {{- $sec := cond (eq .Section "journeys") "works" .Section }}
     <nav aria-label="main">
@@ -37,7 +40,6 @@
         {{- end }}
       </ul>
     </nav>
-    {{ partial "lang.html" . }}
     {{- with site.GetPage "/contact" }}
     <a class="status" href="{{ .RelPermalink }}">{{ i18n "commissions" }}</a>
     {{- end }}

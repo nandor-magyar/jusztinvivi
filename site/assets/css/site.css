@@ -45,12 +45,12 @@
   color-scheme: dark;
 }
 :root[data-scheme="light"] {
-  --paper: #f7f5f9;
-  --ink: #1e1a24;
-  --soft: #4b4456;
-  --muted: #6c6477;
-  --rule: #dcd6e2;
-  --pencil: #7048a8;
+  --paper: #f8f5ef;
+  --ink: #2b2117;
+  --soft: #5c4a36;
+  --muted: #7a6449;
+  --rule: #e3d9c8;
+  --pencil: #8f6a1f;
   color-scheme: light;
 }
 :root[data-scheme="light"] body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
@@ -58,7 +58,7 @@
 @media (max-aspect-ratio: 4/5) {
   :root[data-scheme="light"] body::before { background-image: url("/img/relief-tall.webp"); }
 }
-:root[data-scheme="light"] :is(.hero, .art, .journey, .tile .frame) img { box-shadow: 0 1px 2px rgb(40 30 50 / .08), 0 10px 28px rgb(40 30 50 / .12); }
+:root[data-scheme="light"] :is(.hero, .art, .journey, .tile .frame) img { box-shadow: 0 1px 2px rgb(60 42 20 / .08), 0 10px 28px rgb(60 42 20 / .12); }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
@@ -73,7 +73,12 @@ img { max-width: 100%; height: auto; display: block; }
 .name small { display: block; font-family: var(--body); font-size: 16px; color: var(--soft); font-weight: 400; margin-top: 8px; letter-spacing: 0; }
 nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; text-transform: lowercase; }
 nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.lang { display: flex; gap: 8px; font-size: 15px; color: var(--muted); }
+.brand { display: flex; flex-direction: column; gap: 12px; }
+.lang { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--muted); }
+.lang a, .lang [aria-current="true"] { display: inline-flex; align-items: center; gap: 6px; }
+.lang img { width: 20px; height: 10px; box-shadow: 0 0 0 1px rgb(0 0 0 / .12); }
+.lang a img { opacity: .6; }
+.lang a:hover img { opacity: 1; }
 .lang [aria-current="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .status { font-size: 15px; color: var(--soft); text-transform: lowercase; }
 
