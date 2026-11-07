@@ -1,0 +1,9 @@
+# professional references, filled in from Vivien. empty lists show pencil notes.
+# entry shape:
+#   - year: "2024"
+#     hu: "kiállítás címe, helyszín, város"
+#     en: "exhibition title, venue, city"
+#     url: ""        # optional
+exhibitions: []
+education: []
+press: []

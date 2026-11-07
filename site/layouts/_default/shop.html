@@ -1,0 +1,16 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p class="muted">{{ i18n "shop_intro" }}</p>
+<h2>{{ i18n "shop_originals" }}</h2>
+<p>{{ i18n "shop_originals_p" }}</p>
+<div class="grid">
+{{- range (where (where (where site.RegularPages "Section" "works") "Params.status" "available") "Params.placeholder" "!=" true).ByWeight }}
+  {{- if eq .Params.art "original" }}{{ partial "tile.html" . }}{{ end }}
+{{- end }}
+</div>
+<h2>{{ i18n "shop_prints" }}</h2>
+<p>{{ partial "tbd.html" (i18n "tbd_prints") }}</p>
+<h2>{{ i18n "shop_handfinished" }}</h2>
+<p>{{ partial "tbd.html" (i18n "tbd_handfinished") }}</p>
+{{ with site.GetPage "/contact" }}<div class="actions"><a class="btn" href="{{ .RelPermalink }}">{{ i18n "enquire" }}</a></div>{{ end }}
+{{ end }}

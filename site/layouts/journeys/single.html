@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{- $work := site.GetPage (printf "/works/%s" .Params.work) }}
+{{- with $work }}<a class="back" href="{{ .RelPermalink }}">{{ i18n "back_work" }}</a>{{ end }}
+<div class="journey">
+  <h1>{{ with $work }}{{ partial "title.html" . }}{{ else }}{{ .Title }}{{ end }}</h1>
+  {{ with $work }}{{ partial "art.html" (dict "page" . "sizes" "(max-width: 760px) 100vw, 760px") }}{{ end }}
+  <div>
+    {{- with .Params.audio }}{{ with $.Resources.GetMatch . }}
+    <audio controls preload="none" src="{{ .RelPermalink }}"></audio>
+    {{- end }}{{ else }}
+    <span class="muted">{{ i18n "music" }}:</span> {{ partial "tbd.html" (i18n "tbd_music") }}
+    {{- end }}
+  </div>
+  {{- if .Content }}<div>{{ .Content }}</div>{{ else }}<p>{{ partial "tbd.html" (i18n "tbd_meaning") }}</p>{{ end }}
+  <p class="muted">{{ partial "tbd.html" (i18n "tbd_details") }}</p>
+</div>
+{{ end }}

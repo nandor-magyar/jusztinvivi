@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{- $lang := site.Language.Lang }}
+<h1>{{ .Title }}</h1>
+<div class="detail">
+  <div>
+    {{ .Content }}
+    <p class="muted lc">{{ i18n "location" }}</p>
+    <p>{{ partial "tbd.html" (i18n "tbd_about") }}</p>
+    {{- range $key, $missing := dict "exhibitions" "tbd_exhibition" "education" "tbd_school" }}
+    <h2>{{ i18n $key }}</h2>
+    <ul class="plain">
+      {{- $list := index site.Data.cv $key }}
+      {{- range $list }}
+      <li class="row"><span>{{ .year }}</span><span>{{ with .url }}<a href="{{ . }}">{{ end }}{{ index . $lang | default .hu }}{{ with .url }}</a>{{ end }}</span></li>
+      {{- else }}
+      <li class="row"><span>{{ partial "tbd.html" (i18n "tbd_year") }}</span><span>{{ partial "tbd.html" (i18n $missing) }}</span></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    <h2>{{ i18n "press" }}</h2>
+    <ul class="plain">
+      {{- range site.Data.cv.press }}
+      <li class="row"><span>{{ .year }}</span><span>{{ with .url }}<a href="{{ . }}">{{ end }}{{ index . $lang | default .hu }}{{ with .url }}</a>{{ end }}</span></li>
+      {{- else }}
+      <li>{{ partial "tbd.html" (i18n "tbd_press") }}</li>
+      {{- end }}
+    </ul>
+  </div>
+  <div class="art">
+    {{- with resources.Get "img/portrait.jpg" }}{{ with .Fit "800x1000 webp q82" }}
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ site.Params.name }}">
+    {{- end }}{{ end }}
+  </div>
+</div>
+{{ end }}

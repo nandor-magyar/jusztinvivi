@@ -1,0 +1,7 @@
+{{ define "main" }}
+<h1>fan art</h1>
+<p class="muted">{{ i18n "fanart_note" }}</p>
+<div class="grid">
+{{- range .Pages.ByWeight }}{{ partial "guard.html" . }}{{ partial "tile.html" . }}{{ end }}
+</div>
+{{ end }}

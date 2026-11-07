@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p>{{ i18n "contact_p" }}</p>
+<ul class="plain gap-after">
+  <li>e-mail: {{ with site.Params.turnstileSiteKey }}<span id="email" data-endpoint="/api/contact" data-sitekey="{{ . }}" data-lang="{{ site.Language.Lang }}" data-checking="{{ i18n "contact_checking" }}" data-failed="{{ i18n "contact_failed" }}"><span class="ts"></span><span class="status" role="status"></span></span><noscript>{{ i18n "contact_noscript" }}</noscript>{{ else }}{{ partial "tbd.html" (i18n "tbd_email") }}{{ end }}</li>
+  <li>facebook / messenger: <a href="{{ site.Params.facebook }}">{{ site.Params.facebook | replaceRE "^https://www\\." "" }}</a></li>
+  <li>instagram: {{ with site.Params.instagram }}<a href="https://www.instagram.com/{{ . }}/">@{{ . }}</a>{{ else }}{{ partial "tbd.html" (i18n "tbd_handle") }}{{ end }}</li>
+</ul>
+{{ end }}

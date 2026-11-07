@@ -1,0 +1,8 @@
+.git
+.github
+public
+site/public
+site/resources
+site/.hugo_build.lock
+Dockerfile
+Makefile

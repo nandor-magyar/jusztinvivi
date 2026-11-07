@@ -1,0 +1,11 @@
+{{- /* the painting itself: scaled down, never cropped, re-encoded (drops camera metadata) */ -}}
+{{- $p := .page -}}
+{{- $img := $p.Resources.GetMatch "image.*" -}}
+{{- with $img -}}
+  {{- $sm := .Fit "800x1000 webp q82" -}}
+  {{- $lg := .Fit "1600x1600 webp q85" -}}
+  {{- $alt := $p.Title | default (i18n "alt_painting") -}}
+  <img src="{{ $lg.RelPermalink }}" srcset="{{ $sm.RelPermalink }} {{ $sm.Width }}w, {{ $lg.RelPermalink }} {{ $lg.Width }}w"
+       sizes="{{ $.sizes | default "(max-width: 760px) 100vw, 60vw" }}" width="{{ $lg.Width }}" height="{{ $lg.Height }}"
+       alt="{{ $alt }}"{{ if $.lazy }} loading="lazy"{{ end }}>
+{{- end -}}

@@ -1,0 +1,27 @@
+{{- partial "guard.html" . -}}
+{{- $fan := eq .Params.art "fanart" -}}
+<a class="back" href="{{ .Parent.RelPermalink }}">{{ if $fan }}{{ i18n "back_fanart" }}{{ else }}{{ i18n "back_works" }}{{ end }}</a>
+<div class="detail">
+  <div class="art">{{ partial "art.html" (dict "page" .) }}</div>
+  <div>
+    <h1>{{ partial "title.html" . }}</h1>
+    <dl class="facts">
+      <dt>{{ i18n "medium" }}</dt><dd>{{ with .Params.medium }}{{ . }}{{ else }}{{ partial "tbd.html" (i18n "tbd_medium") }}{{ end }}</dd>
+      <dt>{{ i18n "size" }}</dt><dd>{{ with .Params.size }}{{ . }}{{ else }}{{ partial "tbd.html" (i18n "tbd_size") }}{{ end }}</dd>
+      <dt>{{ i18n "year" }}</dt><dd>{{ with .Params.year }}{{ . }}{{ else }}{{ partial "tbd.html" (i18n "tbd_year") }}{{ end }}</dd>
+      <dt>{{ i18n "status" }}</dt><dd>{{ partial "status.html" . }}</dd>
+    </dl>
+    {{ with .Params.quote }}<p class="quote">{{ . }}</p>{{ end }}
+    {{- if not $fan }}
+    <div class="actions">
+      {{- if ne .Params.status "sold" }}
+      {{- $contact := site.GetPage "/contact" }}
+      <a class="btn" href="{{ $contact.RelPermalink }}?work={{ (.Title | default .Slug) | urlquery }}">{{ i18n "enquire" }}</a>
+      {{- end }}
+      {{- with .Params.journey }}{{ with site.GetPage (printf "/journeys/%s" .) }}
+      <a class="btn" href="{{ .RelPermalink }}">{{ i18n "journey" }}</a>
+      {{- end }}{{ end }}
+    </div>
+    {{- end }}
+  </div>
+</div>

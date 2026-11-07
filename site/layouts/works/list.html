@@ -1,0 +1,6 @@
+{{ define "main" }}
+<h1>{{ i18n "originals" }}</h1>
+<div class="grid">
+{{- range .Pages.ByWeight }}{{ partial "tile.html" . }}{{ end }}
+</div>
+{{ end }}

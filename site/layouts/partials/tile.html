@@ -1,0 +1,11 @@
+{{- $link := .RelPermalink -}}
+<div class="tile">
+  {{- if and $link (.Resources.GetMatch "image.*") }}
+  <a class="frame" href="{{ $link }}">{{ partial "art.html" (dict "page" . "sizes" "(max-width: 760px) 100vw, 280px" "lazy" true) }}</a>
+  <div class="t"><a href="{{ $link }}">{{ partial "title.html" . }}</a></div>
+  {{- else }}
+  <div class="frame"><div class="empty">{{ partial "tbd.html" (i18n "tbd_photo") }}</div></div>
+  <div class="t">{{ partial "title.html" . }}</div>
+  {{- end }}
+  <div class="cap">{{ partial "status.html" . }}</div>
+</div>

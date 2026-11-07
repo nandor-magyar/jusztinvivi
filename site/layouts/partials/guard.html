@@ -1,0 +1,6 @@
+{{- /* hard rule: fan art is never sold or offered. the build fails if a fan art page has a price or print option. */ -}}
+{{- if eq .Params.art "fanart" -}}
+  {{- if or .Params.price .Params.prints .Params.handFinished (eq .Params.status "available") -}}
+    {{- errorf "fan art must not be offered for sale: %s (remove price/prints/handFinished/status)" .File.Path -}}
+  {{- end -}}
+{{- end -}}

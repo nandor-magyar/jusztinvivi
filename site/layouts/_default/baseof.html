@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $name := site.Title }}
+<title>{{ if .IsHome }}{{ $name }}{{ else }}{{ .Title | default (i18n "tbd_title") }} · {{ $name }}{{ end }}</title>
+<meta name="description" content="{{ site.Params.bio }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
+{{- end }}
+<meta property="og:title" content="{{ .Title | default $name }}">
+<meta property="og:description" content="{{ site.Params.bio }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- with .Resources.GetMatch "image.*" }}{{ with .Fit "1200x1200 jpg q82" }}
+<meta property="og:image" content="{{ .Permalink }}">
+{{- end }}{{ end }}
+{{- $css := resources.Get "css/site.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="preload" href="/fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+<div class="wrap">
+  <header class="side">
+    <a href="{{ site.Home.RelPermalink }}" class="name">{{ site.Params.name }}<small>{{ site.Params.bio }}</small></a>
+    {{- $cur := . }}
+    {{- $sec := cond (eq .Section "journeys") "works" .Section }}
+    <nav aria-label="main">
+      <ul>
+        {{- range slice "works" "fanart" "shop" "about" "contact" }}
+        {{- $key := . }}
+        {{- with site.GetPage (printf "/%s" $key) }}
+        {{- $active := or (eq $cur.RelPermalink .RelPermalink) (and (in (slice "works" "fanart") $key) (eq $sec $key)) }}
+        <li><a href="{{ .RelPermalink }}"{{ if $active }} aria-current="page"{{ end }}>{{ i18n (printf "nav_%s" $key) }}</a></li>
+        {{- end }}
+        {{- end }}
+      </ul>
+    </nav>
+    {{ partial "lang.html" . }}
+    {{- with site.GetPage "/contact" }}
+    <a class="status" href="{{ .RelPermalink }}">{{ i18n "commissions" }}</a>
+    {{- end }}
+  </header>
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ with site.GetPage "/contact" }}<a href="{{ .RelPermalink }}">{{ i18n "nav_contact" }}</a>{{ end }}
+    <a href="{{ site.Params.facebook }}">facebook</a>
+    {{ with site.Params.instagram }}<a href="https://www.instagram.com/{{ . }}/">instagram</a>{{ else }}<span>instagram</span>{{ end }}
+    <span>© {{ now.Year }} {{ site.Params.name }}</span>
+  </footer>
+</div>
+{{- if and (eq .Layout "contact") site.Params.turnstileSiteKey }}
+{{- $js := resources.Get "js/site.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=vjTurnstile" defer></script>
+{{- end }}
+</body>
+</html>

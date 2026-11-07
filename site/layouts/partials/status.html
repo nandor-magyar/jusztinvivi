@@ -1,0 +1,4 @@
+{{- if eq .Params.art "fanart" -}}{{ i18n "fanart_flag" }}
+{{- else if eq .Params.status "sold" -}}{{ i18n "status_sold" }}
+{{- else if eq .Params.status "nfs" -}}{{ i18n "status_nfs" }}
+{{- else -}}{{ with .Params.price }}{{ . }}{{ else }}{{ i18n "status_available" }}{{ end }}{{- end -}}

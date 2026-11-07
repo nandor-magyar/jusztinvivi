@@ -1,0 +1,115 @@
+/* jusztin vivien: noir with a faint violet tint. the paintings are the only strong colour.
+   fonts are self-hosted (no third-party requests); latin-ext covers ő and ű. */
+
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("/fonts/eb-garamond-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("/fonts/eb-garamond-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("/fonts/eb-garamond-latin-ext-400-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("/fonts/eb-garamond-latin-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-ext-500-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Caveat"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("/fonts/caveat-latin-ext-500-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Caveat"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("/fonts/caveat-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  --paper: #08070a;
+  --ink: #e8e3f1;
+  --soft: #c2bad2;
+  --muted: #8b8399;
+  --rule: #211d28;
+  --pencil: #c3a6ec;
+  --display: "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  --body: "EB Garamond", Georgia, "Times New Roman", serif;
+  --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { display: grid; grid-template-columns: 220px 1fr; gap: 48px; max-width: 1240px; margin: 0 auto; padding: 48px 32px 32px; }
+.side { position: sticky; top: 48px; align-self: start; display: flex; flex-direction: column; gap: 28px; }
+.name { font-family: var(--display); font-size: 30px; line-height: 1.05; font-weight: 500; text-transform: lowercase; letter-spacing: .01em; }
+.name small { display: block; font-family: var(--body); font-size: 16px; color: var(--soft); font-weight: 400; margin-top: 8px; letter-spacing: 0; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; text-transform: lowercase; }
+nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.lang { display: flex; gap: 8px; font-size: 15px; color: var(--muted); }
+.lang [aria-current="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.status { font-size: 15px; color: var(--soft); text-transform: lowercase; }
+
+main { min-width: 0; }
+h1, h2 { font-family: var(--display); font-weight: 400; text-transform: lowercase; text-wrap: balance; margin: 0 0 20px; }
+h1 { font-size: 34px; line-height: 1.15; }
+h2 { font-size: 24px; margin-top: 40px; }
+p { margin: 0 0 14px; max-width: 62ch; }
+.muted { color: var(--muted); }
+.lc { text-transform: lowercase; }
+
+.hero { display: grid; gap: 16px; max-width: 720px; }
+.hero img { max-height: 76vh; width: auto; }
+.cap { font-size: 15px; color: var(--muted); text-transform: lowercase; }
+.cap a { color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px 32px; }
+.tile { display: flex; flex-direction: column; gap: 10px; }
+.tile .frame { aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; }
+.tile .frame img { max-height: 100%; width: auto; object-fit: contain; }
+.tile .empty { width: 100%; height: 100%; border: 1px dashed var(--rule); display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; }
+.tile .t { text-transform: lowercase; }
+
+.detail { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(220px, 1fr); gap: 40px; align-items: start; }
+.detail .art img { max-height: 82vh; width: auto; margin: 0 auto; }
+dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0 0 24px; font-size: 16px; }
+dl.facts dt { color: var(--muted); text-transform: lowercase; }
+dl.facts dd { margin: 0; text-transform: lowercase; }
+.quote { font-style: italic; color: var(--muted); font-size: 16px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.btn { display: inline-block; border: 1px solid var(--ink); padding: 8px 16px; font: inherit; font-size: 16px; text-transform: lowercase; background: none; color: var(--ink); cursor: pointer; }
+.btn:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+.back { display: inline-block; margin-bottom: 24px; font-size: 15px; color: var(--muted); text-transform: lowercase; }
+
+.journey { max-width: 760px; display: flex; flex-direction: column; gap: 48px; }
+.journey img { max-height: 86vh; width: auto; margin: 0 auto; }
+audio { width: 100%; max-width: 420px; }
+
+ul.plain { list-style: none; margin: 0 0 8px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.row { display: grid; grid-template-columns: 90px 1fr; gap: 16px; }
+
+.tbd { font-family: var(--hand); color: var(--pencil); font-size: 1.15em; line-height: 1.1; text-transform: none; }
+
+.ts { display: block; margin-top: 8px; min-height: 65px; }
+
+footer { grid-column: 1 / -1; border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 64px; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; color: var(--muted); text-transform: lowercase; }
+
+@media (max-width: 760px) {
+  .wrap { grid-template-columns: 1fr; gap: 32px; padding: 28px 18px 24px; }
+  .side { position: static; gap: 16px; }
+  nav ul { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; }
+  .detail { grid-template-columns: 1fr; }
+}
+.gap-after { margin-bottom: 32px; }

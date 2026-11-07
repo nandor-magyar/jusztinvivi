@@ -1,0 +1,73 @@
+# Jusztin Vivien: portfolio + shop. Hugo, HU (default, at /) and EN (at /en/).
+# Domain is still open (task 2): replace baseURL before the first deploy.
+baseURL = "https://vivi.rocketfuel.pw/"
+title = "Jusztin Vivien"
+defaultContentLanguage = "hu"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  facebook = "https://www.facebook.com/JusztinVivien"
+  instagram = ""            # handle still missing; empty shows a pencil note
+  turnstileSiteKey = "1x00000000000000000000AA"   # Cloudflare test key (always passes); replace with the real one. the address comes from CONTACT_EMAIL on the server
+  featured = "olivia"       # work shown big on the home page
+
+[languages]
+  [languages.hu]
+    languageName = "hu"
+    languageCode = "hu-HU"
+    weight = 1
+    title = "Jusztin Vivien"
+    [languages.hu.params]
+      name = "jusztin vivien"
+      bio = "festmények akril- és olajfestékkel, a sötét fantasytól a virágos álmokig."
+    [languages.hu.permalinks.page]
+      works = "/munkak/:slug/"
+      fanart = "/fan-art/:slug/"
+      journeys = "/tortenet/:slug/"
+    [languages.hu.permalinks.section]
+      works = "/munkak/"
+      fanart = "/fan-art/"
+      journeys = "/tortenet/"
+  [languages.en]
+    languageName = "en"
+    languageCode = "en"
+    weight = 2
+    title = "Vivien Jusztin"
+    [languages.en.params]
+      name = "vivien jusztin"
+      bio = "paintings in acrylic and oil, from dark fantasy to floral dreams."
+    [languages.en.permalinks.page]
+      works = "/works/:slug/"
+      fanart = "/fan-art/:slug/"
+      journeys = "/journey/:slug/"
+    [languages.en.permalinks.section]
+      works = "/works/"
+      fanart = "/fan-art/"
+      journeys = "/journey/"
+
+[imaging]
+  quality = 85
+  resampleFilter = "Lanczos"
+
+# no third-party calls from the built site
+[privacy]
+  [privacy.youTube]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.x]
+    disable = true
+  [privacy.instagram]
+    disable = true
+
+[services]
+  [services.googleAnalytics]
+    ID = ""
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[minify]
+  minifyOutput = true

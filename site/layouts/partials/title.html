@@ -1,0 +1,6 @@
+{{- /* title of a work, or a pencil note when it is still missing */ -}}
+{{- with .Params.group -}}
+  {{- i18n . }} {{ partial "tbd.html" (i18n "tbd_titles_photos") -}}
+{{- else -}}
+  {{- with .Title }}{{ . }}{{ else }}{{ partial "tbd.html" (i18n "tbd_title") }}{{ end -}}
+{{- end -}}
